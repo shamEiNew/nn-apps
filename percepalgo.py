@@ -2,7 +2,7 @@ import streamlit as st
 from source.perceptron import *
 
 #Path to sample data of size 100*3
-path = "source\\data\\data.csv"
+path = "./source/data/data.csv"
 
 #Getting features of size 100*2 and 100*1
 X, y = prepare(path)
