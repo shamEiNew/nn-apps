@@ -18,8 +18,6 @@ def trained_model(img):
 
     model.load_state_dict(torch.load("../nn-apps/source/models/digit_classifier_g.pt"))
     model.eval()
-    if 'model' not in st.session_state:
-        st.session_state['model']=model
     
     with torch.no_grad():
         logits = st.session_state['model'].forward(img.view(1, 784).float())
