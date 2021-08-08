@@ -153,6 +153,7 @@ def main():
         with colsu[0]:
             st.write(
                 """
+                
                 A forward network which takes input of batch of 64 images with image as row vector,\n that is 64*784 tensor\n
                 is built with torch.nn module.
 
