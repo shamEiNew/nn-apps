@@ -78,8 +78,6 @@ def canvas(columns):
     if canvas_result.image_data is not None:
         test_x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         test_x.reshape(1, 28, 28)
-    else:
-        test_x = np.zeros(1, 28, 28)
     
     return torch.tensor(test_x/255)
 
