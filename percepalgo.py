@@ -9,7 +9,7 @@ X, y = prepare(path)
 
 def upper_columns():
 
-    cols = st.beta_columns(3)
+    cols = st.columns(3)
     with cols[0]:
         st.header('Early Perceptron on Machine')
         st.image('./img/Mark_I_perceptron.jpeg', caption="Mark I Machine")
@@ -64,7 +64,7 @@ def upper_columns():
 #Function for app excecution
 def main_percep():
     upper_columns()
-    columns = st.beta_columns(3)
+    columns = st.columns(3)
 
     with columns[0]:
         st.header('INPUTS')

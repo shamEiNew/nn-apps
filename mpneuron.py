@@ -25,7 +25,7 @@ def main():
     """)
 
 
-    column =  st.beta_columns(3)
+    column =  st.columns(3)
     plots = BoolPlots()
 
     with column[0] as c1:
