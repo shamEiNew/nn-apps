@@ -15,10 +15,8 @@ import streamlit as st
 import numpy as np
 from streamlit_drawable_canvas import st_canvas
 
-
-
-
-def trained_model(img):
+@st.cache
+def model_gen():
 
     #Model Declaration
     model = nn.Sequential(nn.Linear(784, 128),
@@ -32,9 +30,15 @@ def trained_model(img):
     model.load_state_dict(torch.load("../nn-apps/source/models/digit_classifier_g.pt"))
     model.eval()
     
+    return model
+
+def trained_model(img):
+    model = model_gen()
+
+    
     #model prediction
     with torch.no_grad():
-        logits = model.forward(img.view(1, 784).float())
+        logits = model(img.view(1, 784).float())
 
     #Since we used log softmax will use exp to reverse it and get probabilites
     ps = torch.exp(logits)
