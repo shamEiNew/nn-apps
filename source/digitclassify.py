@@ -1,7 +1,7 @@
 #for model
 from torch import nn
 import torch
-from torchvision import transforms
+# from torchvision import transforms
 
 #for canvas and resizing input
 import cv2
@@ -76,7 +76,7 @@ def plot_prob(img):
 def canvas(columns):
 
     #function for normalization
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=[0.485],std=[0.229])])
+    # transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=[0.485],std=[0.229])])
     SIZE = 192
     
     with columns[0]:
@@ -120,10 +120,10 @@ def canvas(columns):
                 test_x.reshape(1, 28, 28)
 
                 #Normalize the image
-                test_x = transform(test_x)
+                test_x = test_x/255
             except UnboundLocalError:
                 st.write("Provide an input image")
-    return test_x
+    return torch.tensor(test_x)
 
 def main():
     with st.spinner("Be patient loading the page..."):
