@@ -27,7 +27,7 @@ def model_gen():
                         nn.LogSoftmax(dim=1))
 
     #Loading the torch model from the source/models/
-    model.load_state_dict(torch.load("../nn-apps/source/models/digit_classifier_g.pt"))
+    model.load_state_dict(torch.load("./source/models/digit_classifier_g.pt"))
     model.eval()
     
     return model
